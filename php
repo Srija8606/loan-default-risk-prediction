@@ -1,6 +1,16 @@
 loan-default-risk-prediction/
 │
-├── Loan_Default_Model.ipynb
+├── data/
+│   └── (empty or sample_data.csv)
+│
+├── notebooks/
+│   └── Loan_Default_Model.ipynb
+│
+├── src/
+│   ├── preprocess.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── utils.py
 │
 ├── requirements.txt
 ├── README.md
