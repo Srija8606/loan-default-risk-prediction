@@ -1,35 +1,51 @@
-# loan-default-risk-prediction
+# Loan Default Risk Prediction System
 ## Overview
 
-This project builds a machine learning system to predict the probability of loan default using applicant financial and demographic features. The goal is to support risk-aware lending decisions in financial institutions.
+This project builds a machine learning system to predict the probability of loan default using applicant financial and demographic information. The objective is to support risk-aware lending decisions in financial institutions.
 
 ## Problem Statement
 
-Loan defaults lead to significant financial losses. This project aims to develop a classification model that identifies high-risk applicants while balancing false positives and false negatives.
+Loan defaults lead to significant financial losses. Financial institutions must balance between approving profitable customers and avoiding high-risk applicants. This project aims to develop a classification model that identifies potential defaulters while maintaining balanced precision and recall.
 
 ## Dataset
 
-Credit risk dataset containing applicant demographics, employment information, loan characteristics, and repayment status.
+The dataset contains applicant information including:
+
+ -Demographic details
+ -Employment history
+ -Loan characteristics
+ -Credit history
+ -Loan repayment status (target variable)
 
 ## Methodology
 
-- Preprocessing using ColumnTransformer
-- Median imputation for missing values
-- OneHotEncoding for categorical variables
-- Separate pipelines for Logistic Regression and Decision Tree
-- Evaluation using ROC–AUC
-- 5-Fold Cross-Validation for robustness
+Data preprocessing using ColumnTransformer
+
+ - Median imputation for missing values
+ - OneHotEncoding for categorical variables
+ - Separate pipelines for:
+   - Logistic Regression
+   - Decision Tree Classifier
+ - Evaluation using ROC–AUC
+ - 5-Fold Cross-Validation for model stability
 
 ## Results
+### Model	,              Test ROC–AUC	 ,   CV ROC–AUC
+- Logistic Regression ,	  ~0.873 ,          ~0.868
+- Decision Tree	,          ~0.878 ,	          ~0.878
 
-- Decision Tree ROC–AUC: ~0.878
-- Logistic Regression ROC–AUC: ~0.868
-- Final model selected based on cross-validated performance
+Final model selected: Decision Tree Classifier based on slightly higher cross-validated performance and balanced precision–recall trade-off.
 
 ## Key Skills Demonstrated
 
-- Machine Learning Pipelines
-- Handling Class Imbalance
-- Model Comparison & Selection
-- Cross-Validation
-- Financial Risk Modeling
+ - Machine Learning Pipelines
+ - Handling Class Imbalance
+ - Model Comparison & Selection
+ - Cross-Validation
+ - Financial Risk Modeling
+
+## Future Improvements
+
+ - Implement ensemble methods (Random Forest, Gradient Boosting)
+ - Add feature importance visualization
+ - Deploy model as a web application (Flask / FastAPI)
